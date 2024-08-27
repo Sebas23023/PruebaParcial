@@ -1,0 +1,14 @@
+{
+    "name": "inventario",
+    "version": "1.0.0",
+    "description": "Microservice for handling inventory",
+    "main": "src/server.js",
+    "scripts": {
+      "start": "node src/server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^5.10.9"
+    }
+  }
+  

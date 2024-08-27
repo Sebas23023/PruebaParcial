@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  inventario:
+    build: ./backend/inventario
+    container_name: inventario
+    ports:
+      - "5001:5001"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/inventario
+
+  ventas:
+    build: ./backend/ventas
+    container_name: ventas
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/ventas
+
+  clientes:
+    build: ./backend/clientes
+    container_name: clientes
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:
