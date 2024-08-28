@@ -1,4 +1,4 @@
-# Evaluación Intermedia App
+# Supermercado-Antojitos
 
 Esta aplicación web está diseñada para ser un registro de inventario.
 ## Instalación
